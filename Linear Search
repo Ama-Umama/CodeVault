@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int array[100], i, n, s, found = 0;
+
+    // Take Array limit
+    printf("Enter your array limit: ");
+    scanf("%d", &n);
+
+    // Take array elements
+    printf("\nEnter elements below\n");
+    for (i = 0; i < n; i++) {
+        printf("Element number %d: ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    // Display Array
+    printf("\nArray: ");
+    for (i = 0; i < n; i++) {
+        printf(" %d", array[i]);
+    }
+
+    // Enter Value to search
+    printf("\nYour searching value: ");
+    scanf("%d", &s);
+
+    // Search for the value in the array
+    for (i = 0; i < n; i++) {
+        if (s == array[i]) {
+            printf("\nYour value was found at position %d.\n", i + 1);
+            found = 1;
+            break;  // Exit loop after finding the first match
+        }
+    }
+
+    // If not found, print message
+    if (!found) {
+        printf("Value does not exist.\n");
+    }
+
+    return 0;
+}
